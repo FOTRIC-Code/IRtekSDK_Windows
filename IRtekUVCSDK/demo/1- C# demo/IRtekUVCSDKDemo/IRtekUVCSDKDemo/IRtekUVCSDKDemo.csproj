@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C3D4E5F6-A7B8-4C5D-9E8F-A0B1C2D3E4F5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>IRtekUVCSDKDemo</RootNamespace>
+    <AssemblyName>IRtekUVCSDKDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcousticSettingsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorScaleBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThermalImagingPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThermalAdLut.cs" />
+    <Compile Include="DeviceReadCache.cs" />
+    <Compile Include="IRtekFileSDK.cs" />
+    <Compile Include="IRtekACFileSDK.cs" />
+    <Compile Include="ThermalImageRenderer.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPLPointImage.png">
+      <LogicalName>IRtekUVCSDKDemo.SPLPointImage.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\IRtekUVCSDK\IRtekUVCSDK.csproj">
+      <Project>{B2C3D4E5-F6A7-4B5C-9D8E-7F6A5B4C3D2E}</Project>
+      <Name>IRtekUVCSDK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+if "$(PlatformTarget)" == "x86" (
+  copy /y "$(ProjectDir)..\..\..\..\library\x86\IRtekFileSDK.dll" "$(TargetDir)IRtekFileSDK.dll"
+  copy /y "$(ProjectDir)..\..\..\..\library\x86\IRtekACFileSDK.dll" "$(TargetDir)IRtekACFileSDK.dll"
+  copy /y "$(ProjectDir)..\..\..\..\library\x86\IRtekUVCSDK.dll" "$(TargetDir)IRtekUVCSDK.dll"
+  if exist "D:\code\Holly\Volga.IRtekUVCSDK\bin\Win32\Release\IRtekUVCSDK.dll" (
+    copy /y "D:\code\Holly\Volga.IRtekUVCSDK\bin\Win32\Release\IRtekUVCSDK.dll" "$(TargetDir)IRtekUVCSDK.dll"
+  )
+) else if "$(PlatformTarget)" == "x64" (
+  copy /y "$(ProjectDir)..\..\..\..\library\x64\IRtekFileSDK.dll" "$(TargetDir)IRtekFileSDK.dll"
+  copy /y "$(ProjectDir)..\..\..\..\library\x64\IRtekACFileSDK.dll" "$(TargetDir)IRtekACFileSDK.dll"
+  copy /y "$(ProjectDir)..\..\..\..\library\x64\IRtekUVCSDK.dll" "$(TargetDir)IRtekUVCSDK.dll"
+  if exist "D:\code\Holly\Volga.IRtekUVCSDK\bin\x64\Release\IRtekUVCSDK.dll" (
+    copy /y "D:\code\Holly\Volga.IRtekUVCSDK\bin\x64\Release\IRtekUVCSDK.dll" "$(TargetDir)IRtekUVCSDK.dll"
+  )
+) else (
+  copy /y "$(ProjectDir)..\..\..\..\library\x86\IRtekFileSDK.dll" "$(TargetDir)IRtekFileSDK.dll"
+  copy /y "$(ProjectDir)..\..\..\..\library\x86\IRtekACFileSDK.dll" "$(TargetDir)IRtekACFileSDK.dll"
+  copy /y "$(ProjectDir)..\..\..\..\library\x86\IRtekUVCSDK.dll" "$(TargetDir)IRtekUVCSDK.dll"
+)
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

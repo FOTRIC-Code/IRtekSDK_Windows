@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{8F3A6C21-5B74-4E19-A2D0-6C91E4F7B8A5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>IRtekNetSDKApiDemo</RootNamespace>
+    <AssemblyName>IRtekNetSDKApiDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SSH.NET" Version="2020.0.2" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlarmDataChart.cs" />
+    <Compile Include="AlarmFileClient.cs" />
+    <Compile Include="AlarmHub.cs" />
+    <Compile Include="AlarmQueryPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AlarmQueryPanel.Designer.cs">
+      <DependentUpon>AlarmQueryPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlarmVideoPlayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AlarmVideoPlayer.Designer.cs">
+      <DependentUpon>AlarmVideoPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlarmWatchBoard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ApiLayout.cs" />
+    <Compile Include="ApiTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiTestForm.Designer.cs">
+      <DependentUpon>ApiTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LivePreviewPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LivePreviewPanel.Designer.cs">
+      <DependentUpon>LivePreviewPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NetSdk.ApiTypes.cs">
+      <DependentUpon>NetSdk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NetSdk.cs" />
+    <Compile Include="PlayCheck.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="RawStreamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RawStreamForm.Designer.cs">
+      <DependentUpon>RawStreamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RtspForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RtspForm.Designer.cs">
+      <DependentUpon>RtspForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StreamHub.cs" />
+    <Compile Include="UiCheck.cs" />
+    <Compile Include="UpgradeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpgradeForm.Designer.cs">
+      <DependentUpon>UpgradeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VideoModeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VideoModeForm.Designer.cs">
+      <DependentUpon>VideoModeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AlarmQueryPanel.resx">
+      <DependentUpon>AlarmQueryPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlarmVideoPlayer.resx">
+      <DependentUpon>AlarmVideoPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApiTestForm.resx">
+      <DependentUpon>ApiTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LivePreviewPanel.resx">
+      <DependentUpon>LivePreviewPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RawStreamForm.resx">
+      <DependentUpon>RawStreamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RtspForm.resx">
+      <DependentUpon>RtspForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpgradeForm.resx">
+      <DependentUpon>UpgradeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoModeForm.resx">
+      <DependentUpon>VideoModeForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+if "$(PlatformTarget)" == "x64" (
+  copy /y "$(ProjectDir)..\..\..\library\x64\*.dll" "$(TargetDir)"
+) else (
+  copy /y "$(ProjectDir)..\..\..\library\x86\*.dll" "$(TargetDir)"
+)
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
